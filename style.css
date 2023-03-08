@@ -1,7 +1,3 @@
-* {
-  /* box-sizing: border-box; */
-}
-
 :focus {
   outline: none;
 }
@@ -26,8 +22,6 @@ body {
 .search-container input {
   padding: 8px;
 }
-.search-container .suggestions {
-}
 
 ul {
   list-style-type: none;
@@ -36,9 +30,6 @@ ul {
   height: auto;
   max-height: 30vh;
 }
-
-/* ul.has-suggestions {
-} */
 
 ul.scrollbar-needed {
   overflow-y: scroll;

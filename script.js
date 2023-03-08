@@ -11,25 +11,17 @@ function search(str) {
 	// Checks if input string is empty.
 	let results = []
 	if (input.value !== '') {
-		// Compares lower-cased version of fruit item to lower-cased version of search string
-		results = fruit.filter(item => item.toLowerCase().includes(str.toLowerCase()))
+		// Compares lower-cased version of fruit item to lower-cased/trimmed version of search string
+		results = fruit.filter(item => item.toLowerCase().includes(str.toLowerCase().trim()))
 	}
-	
-	// Toggles class .has-suggestions based on the input str containing valid results or not.
-	if (results.length !== 0) {
-		suggestions.classList.add("has-suggestions")
-	} else {
-		suggestions.classList.remove("has-suggestions")
-	}
-
 	return results
 }
 
 function searchHandler(e) {
-	showSuggestions(search(input.value), input.value)
+	showSuggestions(search(input.value))
 }
 
-function showSuggestions(results, inputVal) {
+function showSuggestions(results) {
 	suggestions.innerHTML = ''
 	for (item of results) {
 		const newLi = document.createElement('li')
