@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to right, orange, red)
+  background: linear-gradient(to right, orange, red);
 }
 
 .search-container {
@@ -32,12 +32,17 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  height: 100px;
+  height: auto;
+  max-height: 30vh;
+}
+
+/* ul.has-suggestions {
+} */
+
+ul.scrollbar-needed {
   overflow-y: scroll;
 }
-ul.has-suggestions {
-  /* TODO */
-}
+
 ul li {
   padding: 5px 0;
 }

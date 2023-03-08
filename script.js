@@ -5,14 +5,20 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 
 function search(str) {
 	// Checks if input string is empty.
+	let results = []
 	if (input.value !== '') {
 		// Compares lower-cased version of fruit item to lower-cased version of search string
-		let results = fruit.filter(item => item.toLowerCase().includes(str.toLowerCase()))
-		return results
+		results = fruit.filter(item => item.toLowerCase().includes(str.toLowerCase()))
+	}
+	
+	// Toggles class .has-suggestions based on the input str containing valid results or not.
+	if (results.length !== 0) {
+		suggestions.classList.add("has-suggestions")
 	} else {
-		return []
+		suggestions.classList.remove("has-suggestions")
 	}
 
+	return results
 }
 
 function searchHandler(e) {
@@ -25,6 +31,13 @@ function showSuggestions(results, inputVal) {
 		const newLi = document.createElement('li')
 		newLi.innerText = item
 		suggestions.appendChild(newLi)
+	}
+
+	// Checks if height of suggestions container is smaller than ~30% of viewport height, and disables scroll bar if so.
+	if (window.innerHeight / suggestions.clientHeight < 3.5) {
+		suggestions.classList.add("scrollbar-needed")
+	} else {
+		suggestions.classList.remove("scrollbar-needed")
 	}
 }
 
