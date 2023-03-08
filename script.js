@@ -16,9 +16,12 @@ function searchHandler(e) {
 }
 
 function showSuggestions(results, inputVal) {
-	console.log(`Your search for ${inputVal} returned ${results.length} results: ${results}.`)
-
-	// TODO
+	suggestions.innerHTML = ''
+	for (item of results) {
+		const newLi = document.createElement('li')
+		newLi.innerText = item
+		suggestions.appendChild(newLi)
+	}
 }
 
 function useSuggestion(e) {
