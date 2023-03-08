@@ -3,7 +3,7 @@
 }
 
 :focus {
-  /* TODO */
+  outline: none;
 }
 
 body {

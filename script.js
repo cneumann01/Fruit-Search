@@ -46,7 +46,9 @@ function showSuggestions(results, inputVal) {
 }
 
 function useSuggestion(e) {
-	// TODO
+	input.value = e.target.innerText
+	// Returns focus to input field so user can press enter to select the item.
+	input.focus()
 }
 
 input.addEventListener('keyup', searchHandler);
