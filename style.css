@@ -21,9 +21,10 @@ body {
 
 .search-container input,
 .search-container .suggestions {
-  padding: 8px;
+  background-color: #FFD699;
 }
 .search-container input {
+  padding: 8px;
 }
 .search-container .suggestions {
 }
@@ -44,8 +45,8 @@ ul.scrollbar-needed {
 }
 
 ul li {
-  padding: 5px 0;
+  padding: 5px 8px;
 }
 ul li:hover {
-  color: blue;
+  background-color: #FF8040
 }
