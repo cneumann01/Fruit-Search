@@ -17,10 +17,6 @@ function search(str) {
 	return results
 }
 
-function searchHandler(e) {
-	showSuggestions(search(input.value))
-}
-
 function showSuggestions(results) {
 	suggestions.innerHTML = ''
 	for (item of results) {
@@ -35,6 +31,10 @@ function showSuggestions(results) {
 	} else {
 		suggestions.classList.remove("scrollbar-needed")
 	}
+}
+
+function searchHandler(e) {
+	showSuggestions(search(input.value))
 }
 
 function useSuggestion(e) {
